@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ranascim <ranascim@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 08:49:45 by ranascim          #+#    #+#              #
-#    Updated: 2022/06/29 09:30:24 by ranascim         ###   ########.fr        #
+#    Updated: 2022/08/02 20:27:25 by coder            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,24 +20,34 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC_DIR = src/
-SRC = $(SRC_DIR)/*.c
+SRC = ft_print_d.c ft_print_p.c ft_print_s.c ft_printf.c ft_change_base.c
 
-OBJ = $(SRC:.c=.o)
+OBJ_DIR = obj/
+OBJ = $(SRC:%.c=$(OBJ_DIR)%.o)
+
+vpath %.c $(SRC_DIR)
 
 all: $(NAME)
 
-$(NAME): $(SRC)
+$(NAME): $(OBJ)
 		$(MAKE) all -C $(LIBFT_DIR)
 		cp $(LIBFT) $(NAME)
-		$(CC) $(CFLAGS) -c $(SRC) -I ./include/
-		mv *.o ./src/
 		ar -rc $(NAME) $(OBJ)
 
+$(OBJ_DIR)%.o: %.c | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -I include -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $@
+
 clean:
-	rm -f $(LIBFT_DIR)*.o
-	rm -f $(SRC_DIR)*.o
+	$(MAKE) -C $(LIBFT_DIR) clean
+	rm -rf $(OBJ_DIR)
 
 fclean: clean
+	$(MAKE) -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
