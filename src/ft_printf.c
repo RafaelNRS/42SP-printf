@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ranascim <ranascim@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 07:23:58 by ranascim          #+#    #+#             */
-/*   Updated: 2022/07/12 08:56:56 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/08/04 20:47:53 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_print_args(va_list args, char c, int len)
 {

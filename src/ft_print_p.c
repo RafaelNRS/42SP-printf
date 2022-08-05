@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_p.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ranascim <ranascim@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 08:02:00 by ranascim          #+#    #+#             */
-/*   Updated: 2022/07/12 08:49:24 by ranascim         ###   ########.fr       */
+/*   Updated: 2022/08/04 20:47:45 by ranascim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_print_p(unsigned long p)
 {

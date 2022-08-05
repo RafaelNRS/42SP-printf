@@ -6,7 +6,7 @@
 #    By: ranascim <ranascim@42.student.42sp.org.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/29 08:49:45 by ranascim          #+#    #+#              #
-#    Updated: 2022/08/02 20:27:25 by coder            ###   ########.fr        #
+#    Updated: 2022/08/04 20:48:21 by ranascim         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,6 @@ fclean: clean
 	$(MAKE) -C $(LIBFT_DIR) fclean
 	rm -f $(NAME)
 
-re: fclean all
+re: fclean a
 
 .PHONY: all clean fclean re
